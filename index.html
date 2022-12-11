@@ -382,34 +382,61 @@
 					</li>
 				</ul>
 			</div>
+			<div class="div-subscription">
+				<p class="appeal-head">Підпишіться на розсилку</p>
+				<div class="div-subscription">
+					<input type="text" name="subscription" placeholder="E-mail">
+					<button type="submit" class="button design-button subscription-button">Підписатися</button>
+				</div>
+			</div>
 		</div>
 	</footer>
 
 	<!-- модалка -->
-	<div data-modal class="backdrop is-hidden">
-		<!-- <div data-modal class="backdrop"> -->
+	<!-- <div data-modal class="backdrop is-hidden"> -->
+	<div data-modal class="backdrop">
 		<form class="modal">
 			<p class="form-header">Залиште свої дані, ми вам передзвонимо</p>
 			<div class="form-field">
 				<label for="name">Ім'я</label>
-				<input type="text" name="name" id="name">
+				<div class="field-input">
+					<input type="text" class="active-field" name="name" id="name">
+					<svg class="icon-input" width="18" height="18">
+						<use href="./images/icons.svg#form-person"></use>
+					</svg>
+				</div>
 			</div>
 			<div class="form-field">
 				<label for="tel">Телефон</label>
-				<input type="text" name="tel" id="tel">
+				<div class="field-input">
+					<input type="text" class="active-field" name="tel" id="tel">
+					<svg class="icon-input" width="18" height="18">
+						<use href="./images/icons.svg#form-phone"></use>
+					</svg>
+				</div>
 			</div>
 			<div class="form-field">
 				<label for="mail">Пошта</label>
-				<input type="text" name="mail" id="mail">
+				<div class="field-input">
+					<input type="text" class="active-field" name="mail" id="mail">
+					<svg class="icon-input" width="18" height="18">
+						<use href="./images/icons.svg#form-email"></use>
+					</svg>
+				</div>
 			</div>
 			<div class="form-field">
 				<label for="comment">Коментар</label>
-				<textarea name="comment" id="comment" placeholder="Введіть текст" rows="6"></textarea>
+				<textarea class="active-field" name="comment" id="comment" placeholder="Введіть текст" rows="6"></textarea>
 			</div>
 
 			<div class="conditions">
-				<input type="checkbox" value="" name="conditions" id="conditions">
-				<label for="conditions">Погоджуюся з розсилкою та приймаю
+				<label class="checkbox-label">
+					<input type="checkbox" class="visually-hidden" value="" name="conditions">
+					<span class="checkbox-icon"></span>
+					<!-- <svg class="checkbox-icon" width="18" height="18">
+						<use href="./images/icons.svg#check"></use>
+					</svg> -->
+					Погоджуюся з розсилкою та приймаю
 					<span>
 						<a href="#" class="link-conditions">Умови договору</a>
 					</span>
@@ -418,7 +445,7 @@
 			<button type="submit" class="button design-button submit-button">Відправити</button>
 
 			<button type="button" class="close-button">
-				<svg data-modal-close class="close-modal" width="18" height="18">
+				<svg data-modal-close class="close-modal" width="16" height="15">
 					<use href="./images/icons.svg#close"></use>
 				</svg>
 			</button>
