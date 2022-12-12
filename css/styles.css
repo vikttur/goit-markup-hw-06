@@ -17,7 +17,7 @@
 	--color-bgr-icon: rgba(255, 255, 255, 0.1);
 	--color-icon: #afb1b8;
 
-	--time-animation: 2500ms;
+	--time-animation: 250ms;
 	--timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -257,7 +257,8 @@ p {
 	padding: 10px 32px;
 
 	box-shadow: 0;
-	transition: background-color var(--time-animation) var(--timing-function),
+	transition:
+		background-color var(--time-animation) var(--timing-function),
 		box-shadow var(--time-animation) var(--timing-function);
 }
 
@@ -522,6 +523,7 @@ p {
 }
 
 .appeal-head {
+	display: block;
 	margin-bottom: 20px;
 
 	font-weight: 700;
@@ -561,7 +563,6 @@ p {
 .div-subscription {
 	/* display: block; */
 	margin-left: auto;
-
 }
 
 .div-subscription input {
@@ -570,10 +571,11 @@ p {
 	margin-right: 12px;
 
 	width: 358px;
-
+	font-family: inherit;
 	background-color: rgba(33, 150, 243, 0);
 	/* color: rgba(33, 150, 243, 0); */
 
+	cursor: pointer;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 	border-radius: 4px;
@@ -582,22 +584,32 @@ p {
 .div-subscription input::placeholder {
 	font-size: 16px;
 	line-height: 1.25;
-	letter-spacing: 0.03em;
 	color: rgba(255, 255, 255, 0.6);
 }
 
+.subscription-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
 .subscription-button {
+	display: inline-block;
 	min-width: 200px;
 	padding: 10px 28px;
 
+	text-align: left;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	transition:
-		background-color var(--time-animation) var(--timing-function);
+	background-color: var(--color-accent);
 }
 
-.submit-button:hover,
-.submit-button:focus {
-	background-color: var(--color-btn-active);
+.icon-send {
+	position: absolute;
+	top: 50%;
+	right: 28px;
+
+	transform: translateY(-50%);
 }
 
 /* --- portfolio --- */
@@ -747,7 +759,6 @@ p {
 
 .backdrop.is-hidden {
 	pointer-events: none;
-	/* visibility: hidden; */
 	opacity: 0;
 }
 
@@ -764,8 +775,9 @@ p {
 	left: 50%;
 
 	min-width: 528px;
-	/* min-height: 581px; */
 	padding: 40px;
+
+	font-family: inherit;
 
 	justify-content: center;
 	align-items: center;
@@ -794,7 +806,13 @@ p {
 .form-field {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 10px;
+
 	width: 100%;
+}
+
+.last-field {
+	margin-bottom: 20px;
 }
 
 .form-field label {
@@ -810,7 +828,6 @@ p {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	margin-bottom: 10px;
 
 	width: 100%;
 }
@@ -826,8 +843,13 @@ p {
 		border var(--time-animation) var(--timing-function);
 }
 
+.active-field {
+	cursor: pointer;
+}
+
 .active-field:hover,
 .active-field:focus {
+	outline: none;
 	border: 1px solid var(--color-accent);
 }
 
@@ -850,7 +872,6 @@ p {
 
 .form-field textarea {
 	padding: 11px 16px;
-	margin-bottom: 20px;
 
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
@@ -866,33 +887,50 @@ p {
 	color: rgba(117, 117, 117, 0.5);
 }
 
-.conditions {
-	display: flex;
+.consent {
 	margin-bottom: 30px;
+}
 
+.label-consent {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.checkbox-label {
-	display: flex;
-	align-items: center;
-}
-
-.checkbox:checked+.checkbox-icon {
-	background-color: red;
-}
-
 .checkbox-icon {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	background-color: blue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 8px;
 
+	width: 16px;
+	height: 16px;
 
+	border: 2px solid var(--color-header);
+	border-radius: 2px;
+	transition:
+		border var(--time-animation) var(--timing-function);
 }
 
-.link-conditions {
+.checkbox-icon>svg {
+	fill: transparent;
+	transition:
+		fill var(--time-animation) var(--timing-function);
+}
+
+.checkbox-consent:checked+.label-consent>.checkbox-icon {
+	border: none;
+}
+
+.checkbox-consent:checked+.label-consent svg {
+	fill: var(--color-accent);
+}
+
+.text-consent {
+	margin-right: 4px;
+}
+
+.link-consent {
 	color: var(--color-accent);
 }
 
@@ -902,6 +940,7 @@ p {
 	padding: 10px 52px;
 
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	background-color: var(--color-accent);
 	transition:
 		background-color var(--time-animation) var(--timing-function);
 }
@@ -914,6 +953,8 @@ p {
 .close-button {
 	display: flex;
 	position: absolute;
+	justify-content: center;
+	align-items: center;
 	top: 8px;
 	right: 8px;
 
@@ -923,9 +964,7 @@ p {
 	background: var(--color-bgr-head);
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
-
-	justify-content: center;
-	align-items: center;
+	cursor: pointer;
 
 	color: var(--color-logo);
 	transition:
