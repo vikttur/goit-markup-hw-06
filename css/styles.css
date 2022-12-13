@@ -561,7 +561,6 @@ p {
 }
 
 .div-subscription {
-	/* display: block; */
 	margin-left: auto;
 }
 
@@ -573,9 +572,8 @@ p {
 	width: 358px;
 	font-family: inherit;
 	background-color: rgba(33, 150, 243, 0);
-	/* color: rgba(33, 150, 243, 0); */
+	color: var(--color-bgr-head);
 
-	cursor: pointer;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 	border-radius: 4px;
@@ -601,6 +599,11 @@ p {
 
 	text-align: left;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	background-color: var(--color-accent);
+}
+
+.subscription-button:hover,
+.subscription-button:focus {
 	background-color: var(--color-accent);
 }
 
@@ -774,7 +777,7 @@ p {
 	top: 50%;
 	left: 50%;
 
-	min-width: 528px;
+	width: 528px;
 	padding: 40px;
 
 	font-family: inherit;
@@ -843,10 +846,6 @@ p {
 		border var(--time-animation) var(--timing-function);
 }
 
-.active-field {
-	cursor: pointer;
-}
-
 .active-field:hover,
 .active-field:focus {
 	outline: none;
@@ -876,6 +875,7 @@ p {
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
 
+	resize: none;
 	transition:
 		border var(--time-animation) var(--timing-function);
 }
